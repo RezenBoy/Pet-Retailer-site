@@ -17,7 +17,7 @@ function Home() {
             A selection of our wholesale pet products.
           </p>
 
-          <ProductList initialCount={3} loadMoreCount={6} />
+          <ProductList initialCount={4} loadMoreCount={8} />
 
         </div>
       </section>

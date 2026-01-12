@@ -1,57 +1,129 @@
+import { FiPhone, FiMail, FiArrowRight } from "react-icons/fi";
+
 function Hero() {
   return (
-    <section className="relative min-h-[65vh] flex items-center">
-      
+    <section className="relative min-h-[75vh] flex items-center overflow-hidden mt-10">
+
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center scale-100"
+        className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('/images/hero.jpg')" }}
       />
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/65 to-slate-900/60" />
+      {/* Modern Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-900/85" />
+
+      {/* Decorative Elements */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
 
       {/* Content */}
-      <div className="relative z-10 w-full ml-0 sm:ml-4">
-        <div className="max-w-7xl mx-auto px-4 py-20">
-          <div className="max-w-xl">
+      <div className="relative z-10 w-full">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 py-24">
+          <div className="max-w-2xl">
+
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-sky-500/10 backdrop-blur-sm border border-sky-500/20 rounded-full px-4 py-2 mb-6">
+              <span className="w-2 h-2 bg-sky-400 rounded-full animate-pulse" />
+              <span className="text-sm font-medium text-sky-300">
+                Trusted B2B Supplier
+              </span>
+            </div>
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight text-white">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1] text-white">
               Wholesale Dog & Pet Products
-              <span className="block text-sky-400 mt-2 text-2xl sm:text-3xl md:text-4xl">
-                For Retailers Only
-              </span>
             </h1>
 
+            <p className="mt-4 text-2xl sm:text-3xl font-semibold text-sky-400">
+              For Retailers Only
+            </p>
+
             {/* Description */}
-            <p className="mt-6 text-base sm:text-lg text-slate-200 leading-relaxed">
+            <p className="mt-6 text-lg text-slate-300 leading-relaxed max-w-xl">
               A trusted wholesale supplier offering quality pet food,
               accessories, grooming essentials, and more. Orders are
               accepted exclusively via phone or email.
             </p>
 
-            {/* CTA */}
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            {/* CTA Buttons */}
+            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+
+              {/* Call CTA */}
               <a
                 href="tel:+919811368649"
-                className="inline-flex justify-center items-center bg-sky-400 text-slate-900 px-8 py-3 rounded-md font-medium hover:bg-sky-500 transition"
+                className="group inline-flex justify-center items-center gap-3 bg-sky-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-sky-600 transition-all duration-200 shadow-lg shadow-sky-500/25 hover:shadow-xl hover:shadow-sky-500/30 hover:-translate-y-0.5"
               >
-                Call to Order
+                <FiPhone className="w-5 h-5" />
+                <span>Call to Order</span>
+                <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
 
+              {/* Email CTA */}
               <a
                 href="mailto:orders@company.com"
-                className="inline-flex justify-center items-center border border-slate-400 px-8 py-3 rounded-md text-white hover:bg-white/10 transition"
+                className="inline-flex justify-center items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 px-8 py-4 rounded-xl text-white font-semibold hover:bg-white/10 hover:border-white/20 transition-all duration-200"
               >
-                Email Orders
+                <FiMail className="w-5 h-5" />
+                <span>Email Orders</span>
               </a>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="mt-12 flex flex-wrap items-center gap-8 text-sm text-slate-400">
+              <div className="flex items-center gap-2">
+                <svg
+                  className="w-5 h-5 text-sky-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812z"
+                  />
+                </svg>
+                <span>Verified Supplier</span>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <svg
+                  className="w-5 h-5 text-sky-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span>Fast Processing</span>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <svg
+                  className="w-5 h-5 text-sky-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  />
+                </svg>
+                <span>Quality Guaranteed</span>
+              </div>
             </div>
 
           </div>
         </div>
       </div>
-
     </section>
   );
 }

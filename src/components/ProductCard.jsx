@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { FiArrowRight, FiPackage } from "react-icons/fi";
 
 function ProductCard({ product }) {
   const navigate = useNavigate();
@@ -10,50 +11,72 @@ function ProductCard({ product }) {
   return (
     <div
       onClick={goToDetails}
-      className="group cursor-pointer bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
+      className="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-100 hover:border-sky-200 transition-all duration-300 hover:-translate-y-1"
     >
-      {/* Image */}
-      <div className="relative h-48 bg-slate-100 overflow-hidden">
+      {/* Image Container */}
+      <div className="relative h-56 bg-gradient-to-br from-slate-50 to-slate-100 overflow-hidden">
         {product.image ? (
           <img
             src={product.image}
             alt={product.name}
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
         ) : (
-          <div className="h-full w-full flex items-center justify-center text-slate-400 text-sm">
-            Product Image
+          <div className="h-full w-full flex flex-col items-center justify-center text-slate-400">
+            <FiPackage className="w-12 h-12 mb-2" />
+            <span className="text-sm font-medium">Product Image</span>
           </div>
         )}
 
         {/* Category Badge */}
-        <span className="absolute top-3 left-3 bg-slate-900/80 text-white text-xs px-3 py-1 rounded-full">
-          {product.category}
-        </span>
+        <div className="absolute top-3 left-3">
+          <span className="inline-flex items-center bg-white/95 backdrop-blur-sm text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full shadow-sm">
+            {product.category}
+          </span>
+        </div>
+
+        {/* Hover Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
       {/* Content */}
-      <div className="p-5">
-        <h3 className="text-base font-semibold text-slate-800 leading-snug line-clamp-2">
+      <div className="p-6">
+        <h3 className="text-lg font-bold text-slate-900 leading-snug line-clamp-2 group-hover:text-sky-600 transition-colors duration-200">
           {product.name}
         </h3>
 
-        {/* Variants (optional) */}
-        {product.variants && (
-          <p className="text-xs text-slate-500 mt-2 line-clamp-1">
-            Variants: {product.variants.join(", ")}
-          </p>
+        {/* Variants */}
+        {product.variants && product.variants.length > 0 && (
+          <div className="mt-3 flex flex-wrap gap-1.5">
+            {product.variants.slice(0, 3).map((variant, idx) => (
+              <span
+                key={idx}
+                className="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-md font-medium"
+              >
+                {variant}
+              </span>
+            ))}
+            {product.variants.length > 3 && (
+              <span className="text-xs text-slate-500 px-2 py-1">
+                +{product.variants.length - 3} more
+              </span>
+            )}
+          </div>
         )}
 
-        <div className="mt-4 flex items-center justify-between">
-          <p className="text-slate-900 font-semibold text-sm">
-            {product.priceNote}
-          </p>
+        {/* Footer */}
+        <div className="mt-5 flex items-center justify-between">
+          <div>
+            <p className="text-sm text-slate-500 font-medium">Wholesale Price</p>
+            <p className="text-base text-slate-900 font-bold mt-0.5">
+              {product.priceNote}
+            </p>
+          </div>
 
-          {/* Subtle arrow indicator */}
-          <span className="text-slate-400 group-hover:text-sky-400 transition">
-            →
-          </span>
+          {/* Action Button */}
+          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-sky-50 text-sky-600 group-hover:bg-sky-500 group-hover:text-white transition-all duration-200">
+            <FiArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+          </div>
         </div>
       </div>
     </div>
