@@ -34,7 +34,7 @@ function Hero() {
             {/* CTA */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:+919999999999"
+                href="tel:+919811368649"
                 className="inline-flex justify-center items-center bg-sky-400 text-slate-900 px-8 py-3 rounded-md font-medium hover:bg-sky-500 transition"
               >
                 Call to Order

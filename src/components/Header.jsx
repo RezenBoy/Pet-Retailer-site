@@ -45,7 +45,7 @@ function Header() {
 
         {/* Desktop CTA */}
         <a
-          href="tel:+919999999999"
+          href="tel:+919811368649"
           className="hidden sm:inline-flex bg-sky-400 text-slate-900 px-4 py-2 rounded-md text-sm font-medium hover:bg-sky-500 transition"
         >
           Call to Order
