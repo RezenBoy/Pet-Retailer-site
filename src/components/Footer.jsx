@@ -55,13 +55,19 @@ function Footer() {
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3">
                                 <FiPhone className="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" />
-                                <div className="text-sm">
+                                <div className="text-sm ">
                                     <a
-                                        href="tel:+919811368649"
+                                        href="tel:+919560858066"
                                         className="text-slate-300 hover:text-sky-400 transition-colors block"
                                     >
-                                        +91 98113 68649
+                                        +91 95608 58066
                                     </a>
+                                </div>
+                            </li>
+
+                            <li className="flex items-start gap-3">
+                                <FiPhone className="w-4 h-4 text-sky-400 mt-1.5 flex-shrink-0" />
+                                <div className="text-sm ">
                                     <a
                                         href="tel:+919811368649"
                                         className="text-slate-300 hover:text-sky-400 transition-colors block mt-1"
@@ -89,7 +95,7 @@ function Footer() {
                             </h5>
                             <div className="flex items-center gap-3">
                                 <a
-                                    href="https://wa.me/919811368649"
+                                    href="https://wa.me/919560858066"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center justify-center w-9 h-9 rounded-lg bg-slate-800 hover:bg-green-500 text-slate-400 hover:text-white transition-all duration-200 hover:scale-110"

@@ -1,181 +1,138 @@
-import { useState } from "react";
-import { FiPhone, FiMail, FiMapPin, FiSend, FiCheckCircle } from "react-icons/fi";
+import { FiPackage, FiUsers, FiPhone, FiCheckCircle, FiShield, FiTruck } from "react-icons/fi";
 
-function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    message: ""
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        message: ""
-      });
-    }, 3000);
-  };
-
-  const contactInfo = [
+function About() {
+  const highlights = [
     {
-      icon: <FiPhone className="w-6 h-6" />,
-      title: "Phone",
-      details: ["+91 98113 68649", "+91 98113 68649"],
-      action: "tel:+919811368649"
+      icon: <FiPackage className="w-8 h-8" />,
+      title: "Wide Product Range",
+      description: "Comprehensive selection of dog food, accessories, grooming products, toys, and pet essentials."
     },
     {
-      icon: <FiMail className="w-6 h-6" />,
-      title: "Email",
-      details: ["orders@khushienterprise.com"],
-      action: "mailto:orders@khushienterprise.com"
+      icon: <FiUsers className="w-8 h-8" />,
+      title: "Retailer Focused",
+      description: "Exclusively designed for retailers, distributors, and bulk buyers seeking quality wholesale products."
     },
     {
-      icon: <FiMapPin className="w-6 h-6" />,
-      title: "Address",
-      details: [
-        "Khushi Enterprise",
-        "Plot No. 12, Industrial Area",
-        "Phase 2, Delhi, abc – 141003, India"
-      ],
-      action: null
+      icon: <FiPhone className="w-8 h-8" />,
+      title: "Simple Ordering",
+      description: "Streamlined ordering process via phone or email with dedicated customer support."
+    }
+  ];
+
+  const features = [
+    {
+      icon: <FiCheckCircle className="w-5 h-5" />,
+      text: "Competitive wholesale pricing"
+    },
+    {
+      icon: <FiShield className="w-5 h-5" />,
+      text: "Quality guaranteed products"
+    },
+    {
+      icon: <FiTruck className="w-5 h-5" />,
+      text: "Reliable delivery service"
+    },
+    {
+      icon: <FiUsers className="w-5 h-5" />,
+      text: "Long-term partnerships"
     }
   ];
 
   return (
     <section className="bg-gradient-to-br from-slate-50 to-slate-100 py-16">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
-
+        
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-sky-50 text-sky-600 text-sm font-semibold px-4 py-2 rounded-full mb-4">
-            <FiMail className="w-4 h-4" />
-            Get In Touch
+            <FiUsers className="w-4 h-4" />
+            About Khushi Enterprise
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Contact Us
+            Your Trusted Wholesale Partner
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Ready to place an order or have questions? We're here to help.
+            Committed to serving retailers with premium pet products and exceptional service
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        {/* Main Content Card */}
+        <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12 mb-8">
+          
+          {/* Story */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+              Who We Are
+            </h3>
+            <p className="text-base text-slate-600 leading-relaxed mb-4">
+              We are a dedicated wholesale supplier of dog and pet products, serving
+              retailers with quality items at competitive prices. Our focus
+              is on building long-term partnerships with pet shops, distributors,
+              and resellers across the region.
+            </p>
+            <p className="text-base text-slate-600 leading-relaxed">
+              With years of experience in the pet industry, we understand the unique needs
+              of retailers and are committed to providing products that help your business thrive.
+            </p>
+          </div>
 
-          {/* Contact Information Cards */}
-          <div className="lg:col-span-1 space-y-6">
-            {contactInfo.map((info, index) => (
+          {/* Highlights Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {highlights.map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow"
+                className="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-xl p-6 hover:shadow-lg hover:border-sky-200 transition-all duration-200"
               >
-                <div className="flex items-center justify-center w-12 h-12 bg-sky-50 text-sky-600 rounded-lg mb-4">
-                  {info.icon}
+                <div className="flex items-center justify-center w-14 h-14 bg-sky-50 text-sky-600 rounded-xl mb-4">
+                  {item.icon}
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3">
-                  {info.title}
+                <h3 className="text-lg font-bold text-slate-900 mb-2">
+                  {item.title}
                 </h3>
-
-                {info.action ? (
-                  <a
-                    href={info.action}
-                    className="space-y-1 hover:text-sky-600 transition-colors block"
-                  >
-                    {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-sm text-slate-600">
-                        {detail}
-                      </p>
-                    ))}
-                  </a>
-                ) : (
-                  <div className="space-y-1">
-                    {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-sm text-slate-600">
-                        {detail}
-                      </p>
-                    ))}
-                  </div>
-                )}
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
 
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10">
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                Send Us a Message
-              </h3>
-              <p className="text-sm text-slate-600 mb-8">
-                Fill out the form below and we'll get back to you as soon as possible.
-              </p>
-
-              {submitted ? (
-                <div className="flex flex-col items-center justify-center py-12">
-                  <div className="flex items-center justify-center w-16 h-16 bg-green-50 text-green-600 rounded-full mb-4">
-                    <FiCheckCircle className="w-8 h-8" />
+          {/* Features List */}
+          <div className="bg-slate-50 rounded-xl p-6 lg:p-8">
+            <h3 className="text-xl font-bold text-slate-900 mb-6">
+              Why Choose Us
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-3 text-slate-700"
+                >
+                  <div className="flex-shrink-0 text-sky-600">
+                    {feature.icon}
                   </div>
-                  <h4 className="text-xl font-bold text-slate-900 mb-2">
-                    Message Sent!
-                  </h4>
-                  <p className="text-slate-600 text-center">
-                    Thank you for reaching out. We'll contact you shortly.
-                  </p>
+                  <span className="text-sm font-medium">{feature.text}</span>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* form unchanged */}
-                  <button
-                    type="submit"
-                    className="w-full flex items-center justify-center gap-3 bg-sky-500 text-white px-6 py-4 rounded-xl font-semibold hover:bg-sky-600 transition-all duration-200 shadow-lg hover:shadow-xl"
-                  >
-                    <span>Send Message</span>
-                    <FiSend className="w-5 h-5" />
-                  </button>
-                </form>
-              )}
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Additional Info */}
-        <div className="mt-8 bg-gradient-to-r from-blue-50 to-sky-50 border border-sky-100 rounded-xl p-6">
+        {/* B2B Notice */}
+        <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-400 rounded-xl p-6 shadow-md">
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0">
-              <svg
-                className="w-6 h-6 text-sky-600"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                />
+              <svg className="w-6 h-6 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
               </svg>
             </div>
             <div>
-              <h4 className="text-base font-bold text-sky-900 mb-1">
-                Business Hours
+              <h4 className="text-base font-bold text-amber-900 mb-1">
+                B2B Platform Notice
               </h4>
-              <p className="text-sm text-sky-800">
-                Monday - Saturday: 9:00 AM - 6:00 PM | Sunday: Closed
+              <p className="text-sm text-amber-800">
+                This website is intended exclusively for retailers and business customers.
+                We do not sell directly to individual consumers. All orders require business
+                verification and minimum purchase quantities.
               </p>
             </div>
           </div>
@@ -186,4 +143,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default About;

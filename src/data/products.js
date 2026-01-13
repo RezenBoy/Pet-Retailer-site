@@ -38,7 +38,7 @@ const products = [
         material: "Iron + Plastic Tray",
         priceNote: "₹2350 – ₹9000",
         description: "Heavy-duty pipe cage with removable plastic base tray.",
-        image: "/images/products/pipe-dog-cage.jpg"
+        image: "/images/products/cate.png"
     },
     {
         id: 5,

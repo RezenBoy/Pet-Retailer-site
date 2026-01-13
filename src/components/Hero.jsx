@@ -1,3 +1,4 @@
+import { BsWhatsapp } from "react-icons/bs";
 import { FiPhone, FiMail, FiArrowRight } from "react-icons/fi";
 
 function Hero() {
@@ -32,7 +33,7 @@ function Hero() {
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1] text-white">
-              Wholesale Dog & Pet Products
+              Wholesale Pet Products
             </h1>
 
             <p className="mt-4 text-2xl sm:text-3xl font-semibold text-sky-400">
@@ -51,12 +52,23 @@ function Hero() {
 
               {/* Call CTA */}
               <a
-                href="tel:+919811368649"
+                href="tel:+919560858066"
                 className="group inline-flex justify-center items-center gap-3 bg-sky-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-sky-600 transition-all duration-200 shadow-lg shadow-sky-500/25 hover:shadow-xl hover:shadow-sky-500/30 hover:-translate-y-0.5"
               >
                 <FiPhone className="w-5 h-5" />
                 <span>Call to Order</span>
                 <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+
+              {/* WhatsApp CTA */}
+              <a
+                href="https://wa.me/919560858066?text=Hello%20I%20want%20to%20place%20a%20wholesale%20order"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex justify-center items-center gap-3 bg-green-500/10 backdrop-blur-sm border border-green-500/20 px-8 py-4 rounded-xl text-white font-semibold hover:bg-green-500/20 hover:border-green-500/40 transition-all duration-200"
+              >
+                <BsWhatsapp className="w-5 h-5 text-green-400" />
+                <span>WhatsApp Order</span>
               </a>
 
               {/* Email CTA */}
@@ -67,6 +79,7 @@ function Hero() {
                 <FiMail className="w-5 h-5" />
                 <span>Email Orders</span>
               </a>
+
             </div>
 
             {/* Trust Indicators */}

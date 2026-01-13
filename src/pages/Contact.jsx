@@ -1,32 +1,53 @@
 import { FiPhone, FiMail, FiClock, FiAlertCircle } from "react-icons/fi";
+import { BsWhatsapp } from "react-icons/bs";
 
 function Contact() {
+
   const contactMethods = [
     {
       icon: <FiPhone className="w-8 h-8" />,
       title: "Call Us",
       description: "Speak directly with our sales team",
-      contactInfo: "+91 98113 68649",
-      action: "tel:+919811368649",
+      contactInfo: "+91 95608 58066",
+      action: "tel:+919560858066",
       buttonText: "Call Now"
     },
     {
+      icon: <BsWhatsapp className="w-8 h-8" />,
+      title: "WhatsApp",
+      description: "Quick order & enquiry",
+      contactInfo: "+91 98113 68649",
+      action:
+        "https://wa.me/919560858066?text=Hello%20I%20want%20to%20place%20a%20wholesale%20order",
+      buttonText: "Chat on WhatsApp"
+    },
+
+    {
       icon: <FiMail className="w-8 h-8" />,
       title: "Email Us",
-      description: "Send your product and quantity details",
+      description: "Send product & quantity details",
       contactInfo: "orders@company.com",
       action: "mailto:orders@company.com",
       buttonText: "Send Email"
+    },
+
+    {
+      icon: <FiPhone className="w-8 h-8" />,
+      title: "Call (Alternate)",
+      description: "Alternate contact number",
+      contactInfo: "+91 98113 68649",
+      action: "tel:+919811368649",
+      buttonText: "Call Now"
     },
     {
       icon: <FiClock className="w-8 h-8" />,
       title: "Business Hours",
       description: "We're available during these times",
       contactInfo: "Mon – Sat: 10:00 AM – 7:00 PM",
-      action: null,
-      buttonText: null
-    }
+      action: null, buttonText: null
+    },
   ];
+
 
   return (
     <section className="bg-gradient-to-br from-slate-50 to-slate-100 py-16">

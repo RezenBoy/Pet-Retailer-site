@@ -47,7 +47,7 @@ function Header() {
 
             {/* Desktop CTA */}
             <a
-              href="tel:+919811368649"
+              href="tel:+919560858066"
               className="hidden md:inline-flex items-center gap-2 bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-800 transition-all duration-200 shadow-sm hover:shadow"
             >
               <FiPhone className="w-4 h-4" />
@@ -102,7 +102,7 @@ function Header() {
 
               {/* Mobile CTA */}
               <a
-                href="tel:+919811368649"
+                href="tel:+919560858066"
                 className="mt-4 flex items-center justify-center gap-2 bg-slate-900 text-white px-5 py-3 rounded-lg text-base font-medium hover:bg-slate-800 transition-all duration-200 shadow-sm"
               >
                 <FiPhone className="w-5 h-5" />
