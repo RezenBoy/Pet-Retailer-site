@@ -24,7 +24,7 @@ function Header() {
               to="/"
               className="text-xl font-bold tracking-tight text-slate-900 hover:text-sky-600 transition-colors duration-200"
             >
-              Khushi Enterprise
+              KHUSHI ENTREPRISES
             </Link>
 
             {/* Desktop Navigation */}

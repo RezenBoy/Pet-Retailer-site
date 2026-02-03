@@ -36,9 +36,9 @@ function Hero() {
               Wholesale Pet Products
             </h1>
 
-            <p className="mt-4 text-2xl sm:text-3xl font-semibold text-sky-400">
+            {/* <p className="mt-4 text-2xl sm:text-3xl font-semibold text-sky-400">
               For Retailers Only
-            </p>
+            </p> */}
 
             {/* Description */}
             <p className="mt-6 text-lg text-slate-300 leading-relaxed max-w-xl">
