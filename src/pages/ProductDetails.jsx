@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { FiArrowLeft, FiPhone, FiMail, FiPackage, FiTag } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 import products from "../data/products";
 
 function ProductDetails() {
@@ -108,14 +109,14 @@ function ProductDetails() {
                   </div>
                 )}
 
-                <div className="flex items-start gap-3 pb-4">
+                {/* <div className="flex items-start gap-3 pb-4">
                   <div className="flex-shrink-0 w-24 text-sm font-semibold text-slate-500">
                     Price
                   </div>
                   <div className="text-lg text-slate-900 font-bold">
                     {product.priceNote}
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* Call to Action */}
@@ -123,23 +124,35 @@ function ProductDetails() {
                 <p className="text-sm text-slate-600 mb-4 font-medium">
                   Ready to place a wholesale order?
                 </p>
-                <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex flex-col gap-3">
 
                   <a
-                    href="tel:+919560858066"
+                    href="tel:+919811368649"
                     className="flex items-center justify-center gap-3 bg-sky-500 text-white px-6 py-3.5 rounded-xl font-semibold hover:bg-sky-600 transition-all duration-200 shadow-sm hover:shadow-md"
                   >
                     <FiPhone className="w-5 h-5" />
                     Call to Order
                   </a>
 
-                  <a
-                    href="mailto:orders@company.com"
-                    className="flex items-center justify-center gap-3 bg-white border-2 border-slate-200 text-slate-700 px-6 py-3.5 rounded-xl font-semibold hover:border-slate-300 hover:bg-slate-50 transition-all duration-200"
-                  >
-                    <FiMail className="w-5 h-5" />
-                    Email Order
-                  </a>
+                  <div className="grid grid-cols-2 gap-3">
+                    <a
+                      href="https://wa.me/919811368649?text=Hello%2C%20I%20want%20to%20place%20a%20wholesale%20order%20for%20this%20product"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 bg-green-500 text-white px-4 py-3.5 rounded-xl font-semibold hover:bg-green-600 transition-all duration-200"
+                    >
+                      <FaWhatsapp className="w-5 h-5" />
+                      WhatsApp
+                    </a>
+                    <a
+
+                      href="mailto:orders@khushienterprise.com?subject=Wholesale%20Order%20Inquiry&body=Hi%2C%20I%20would%20like%20to%20place%20an%20order%20for%20this%20product."
+                      className="flex items-center justify-center gap-2 bg-white border-2 border-slate-200 text-slate-700 px-4 py-3.5 rounded-xl font-semibold hover:border-slate-300 hover:bg-slate-50 transition-all duration-200"
+                    >
+                      <FiMail className="w-5 h-5" />
+                      Email
+                    </a>
+                  </div>
 
                 </div>
               </div>

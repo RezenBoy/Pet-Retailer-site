@@ -26,8 +26,8 @@ function Contact() {
       icon: <FiMail className="w-8 h-8" />,
       title: "Email Us",
       description: "Send product & quantity details",
-      contactInfo: "orders@company.com",
-      action: "mailto:orders@company.com",
+      contactInfo: "khushienterprises1013@gmail.com",
+      action: "mailto:khushienterprises1013@gmail.com",
       buttonText: "Send Email"
     },
 

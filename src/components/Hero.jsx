@@ -73,7 +73,7 @@ function Hero() {
 
               {/* Email CTA */}
               <a
-                href="mailto:orders@company.com"
+                href="mailto:khushienterprises1013@gmail.com"
                 className="inline-flex justify-center items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 px-8 py-4 rounded-xl text-white font-semibold hover:bg-white/10 hover:border-white/20 transition-all duration-200"
               >
                 <FiMail className="w-5 h-5" />

@@ -67,9 +67,8 @@ function ProductCard({ product }) {
         {/* Footer */}
         <div className="mt-5 flex items-center justify-between">
           <div>
-            <p className="text-sm text-slate-500 font-medium">Wholesale Price</p>
-            <p className="text-base text-slate-900 font-bold mt-0.5">
-              {product.priceNote}
+            <p className="text-sm text-slate-600 font-medium">
+              View Details for Pricing
             </p>
           </div>
 
