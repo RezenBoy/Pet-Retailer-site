@@ -1,5 +1,5 @@
 import { BsWhatsapp } from "react-icons/bs";
-import { FiPhone, FiMail, FiArrowRight } from "react-icons/fi";
+import { FiPhone, FiMail, FiArrowRight, FiBookOpen } from "react-icons/fi";
 
 function Hero() {
   return (
@@ -24,11 +24,29 @@ function Hero() {
           <div className="max-w-2xl">
 
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-sky-500/10 backdrop-blur-sm border border-sky-500/20 rounded-full px-4 py-2 mb-6">
-              <span className="w-2 h-2 bg-sky-400 rounded-full animate-pulse" />
-              <span className="text-sm font-medium text-sky-300">
-                Trusted B2B Supplier
-              </span>
+            <div className="flex flex-wrap gap-4 mb-6">
+
+              <div className="inline-flex items-center gap-2 bg-sky-500/10 backdrop-blur-sm border border-sky-500/20 rounded-full px-4 py-2">
+                <span className="w-2 h-2 bg-sky-400 rounded-full animate-pulse" />
+                <span className="text-sm font-medium text-sky-300">
+                  Trusted B2B Supplier
+                </span>
+              </div>
+
+              <div className="inline-flex items-center gap-2 bg-sky-500/10 backdrop-blur-sm border border-sky-500/20 rounded-full px-4 py-2">
+                <span className="w-2 h-2 bg-sky-400 rounded-full animate-pulse" />
+                <span className="text-sm font-medium text-sky-300">
+                  Wholesaler
+                </span>
+              </div>
+
+              <div className="inline-flex items-center gap-2 bg-sky-500/10 backdrop-blur-sm border border-sky-500/20 rounded-full px-4 py-2">
+                <span className="w-2 h-2 bg-sky-400 rounded-full animate-pulse" />
+                <span className="text-sm font-medium text-sky-300">
+                  Manufacturer
+                </span>
+              </div>
+
             </div>
 
             {/* Headline */}
@@ -42,9 +60,9 @@ function Hero() {
 
             {/* Description */}
             <p className="mt-6 text-lg text-slate-300 leading-relaxed max-w-xl">
-              A trusted wholesale supplier offering quality pet food,
-              accessories, grooming essentials, and more. Orders are
-              accepted exclusively via phone or email.
+              We manufacture durable dog cages, stainless steel bowls, and
+              high-quality pet accessories, supplying wholesalers and retailers
+              with reliable products at competitive prices
             </p>
 
             {/* CTA Buttons */}
@@ -73,11 +91,11 @@ function Hero() {
 
               {/* Email CTA */}
               <a
-                href="mailto:khushienterprises1013@gmail.com"
+                href="/catalog.pdf" target="_blank"
                 className="inline-flex justify-center items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 px-8 py-4 rounded-xl text-white font-semibold hover:bg-white/10 hover:border-white/20 transition-all duration-200"
               >
-                <FiMail className="w-5 h-5" />
-                <span>Email Orders</span>
+                <FiBookOpen className="w-5 h-5" />
+                <span>Get Catalog</span>
               </a>
 
             </div>
