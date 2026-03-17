@@ -11,7 +11,7 @@ function Footer() {
                     {/* Brand */}
                     <div>
                         <h3 className="text-xl font-bold text-white mb-4">
-                            Khushi Enterprise
+                            Khushi Enterprises
                         </h3>
                         <p className="text-sm leading-relaxed text-slate-400">
                             Wholesale dog and pet products exclusively for retailers.
@@ -145,7 +145,7 @@ function Footer() {
                         <div className="flex items-start gap-3">
                             <FiMapPin className="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" />
                             <address className="text-sm leading-relaxed text-slate-400 not-italic">
-                                Khushi Enterprise<br />
+                                Khushi Enterprises<br />
                                 Plot No. 12, Industrial Area<br />
                                 Phase 2, Delhi<br />
                                 abc – 141003<br />

@@ -29,16 +29,16 @@ function Contact() {
       contactInfo: "khushienterprises1013@gmail.com",
       action: "mailto:khushienterprises1013@gmail.com",
       buttonText: "Send Email"
-    },
+    },  
 
-    {
-      icon: <FiPhone className="w-8 h-8" />,
-      title: "Call (Alternate)",
-      description: "Alternate contact number",
-      contactInfo: "+91 98113 68649",
-      action: "tel:+919811368649",
-      buttonText: "Call Now"
-    },
+    // {
+    //   icon: <FiPhone className="w-8 h-8" />,
+    //   title: "Call (Alternate)",
+    //   description: "Alternate contact number",
+    //   contactInfo: "+91 98113 68649",
+    //   action: "tel:+919811368649",
+    //   buttonText: "Call Now"
+    // },
     {
       icon: <FiClock className="w-8 h-8" />,
       title: "Business Hours",

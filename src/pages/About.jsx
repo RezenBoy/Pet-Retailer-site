@@ -1,4 +1,4 @@
-import { FiPackage, FiUsers, FiPhone, FiCheckCircle, FiShield, FiTruck } from "react-icons/fi";
+import { FiPackage, FiUsers, FiPhone, FiCheckCircle, FiShield, FiTruck, FiCheck } from "react-icons/fi";
 
 function About() {
   const highlights = [
@@ -25,7 +25,12 @@ function About() {
       text: "Competitive wholesale pricing"
     },
     {
-      icon: <FiShield className="w-5 h-5" />,
+      icon: (
+        <div className="relative">
+          <FiShield className="w-5 h-5 text-sky-600" />
+          <FiCheck className="w-3 h-3 text-sky-600 absolute top-1 left-1" />
+        </div>
+      ),
       text: "Quality guaranteed products"
     },
     {
@@ -39,9 +44,9 @@ function About() {
   ];
 
   return (
-    <section className="bg-gradient-to-br from-slate-50 to-slate-100 py-16">
+    <section className="bg-gradient-to-br from-slate-50 to-slate-100 pt-[140px] md:pt-[110px] pb-16">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        
+
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-sky-50 text-sky-600 text-sm font-semibold px-4 py-2 rounded-full mb-4">
@@ -58,11 +63,11 @@ function About() {
 
         {/* Main Content Card */}
         <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12 mb-8">
-          
+
           {/* Story */}
           <div className="mb-12">
             <h3 className="text-2xl font-bold text-slate-900 mb-4">
-              Who We Are
+              Who We Are ?
             </h3>
             <p className="text-base text-slate-600 leading-relaxed mb-4">
               We are a dedicated wholesale supplier of dog and pet products, serving
@@ -99,7 +104,7 @@ function About() {
           {/* Features List */}
           <div className="bg-slate-50 rounded-xl p-6 lg:p-8">
             <h3 className="text-xl font-bold text-slate-900 mb-6">
-              Why Choose Us
+              Why Choose Us ?
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {features.map((feature, index) => (

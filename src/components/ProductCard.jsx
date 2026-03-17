@@ -11,7 +11,7 @@ function ProductCard({ product }) {
   return (
     <div
       onClick={goToDetails}
-      className="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-100 hover:border-sky-200 transition-all duration-300 hover:-translate-y-1"
+      className="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-100 hover:border-sky-200 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
     >
       {/* Image Container */}
       <div className="relative h-56 bg-gradient-to-br from-slate-50 to-slate-100 overflow-hidden">
@@ -40,7 +40,7 @@ function ProductCard({ product }) {
       </div>
 
       {/* Content */}
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-lg font-bold text-slate-900 leading-snug line-clamp-2 group-hover:text-sky-600 transition-colors duration-200">
           {product.name}
         </h3>
@@ -65,7 +65,7 @@ function ProductCard({ product }) {
         )}
 
         {/* Footer */}
-        <div className="mt-5 flex items-center justify-between">
+        <div className="mt-auto pt-5 flex items-center justify-between">
           <div>
             <p className="text-sm text-slate-600 font-medium">
               View Details for Pricing
