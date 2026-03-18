@@ -51,7 +51,7 @@ function About() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-sky-50 text-sky-600 text-sm font-semibold px-4 py-2 rounded-full mb-4">
             <FiUsers className="w-4 h-4" />
-            About Khushi Enterprise
+            About Khushi Enterprises
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             Your Trusted Wholesale Partner
