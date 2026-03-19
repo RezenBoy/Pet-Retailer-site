@@ -40,7 +40,8 @@ function Contact() {
   ];
 
   return (
-    <section className="bg-gradient-to-br from-slate-50 to-slate-100 py-16">
+    <section className="bg-gradient-to-br from-slate-50 to-slate-100 pt-[140px] md:pt-[110px] pb-16">
+
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
 
         {/* Header */}
@@ -111,8 +112,8 @@ function Contact() {
                         {/* Time */}
                         <span
                           className={`text-sm font-semibold ${t.hours === "Closed"
-                              ? "text-red-500"
-                              : "text-sky-600"
+                            ? "text-red-500"
+                            : "text-sky-600"
                             }`}
                         >
                           {t.hours}

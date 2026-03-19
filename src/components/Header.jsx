@@ -46,13 +46,13 @@ function Header() {
             </nav>
 
             {/* Desktop CTA */}
-            <a
+            {/* <a
               href="tel:+919560858066"
               className="hidden md:inline-flex items-center gap-2 bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-800 transition-all duration-200 shadow-sm hover:shadow"
             >
               <FiPhone className="w-4 h-4" />
               <span>Call to Order</span>
-            </a>
+            </a> */}
 
             {/* Mobile Menu Button */}
             <button
