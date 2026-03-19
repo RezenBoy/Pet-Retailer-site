@@ -101,13 +101,13 @@ function Header() {
               ))}
 
               {/* Mobile CTA */}
-              <a
+              {/* <a
                 href="tel:+919560858066"
                 className="mt-4 flex items-center justify-center gap-2 bg-slate-900 text-white px-5 py-3 rounded-lg text-base font-medium hover:bg-slate-800 transition-all duration-200 shadow-sm"
               >
                 <FiPhone className="w-5 h-5" />
                 <span>Call to Order</span>
-              </a>
+              </a> */}
             </nav>
           </div>
         </div>
