@@ -20,7 +20,7 @@ const contactMethods = [
     title: "WhatsApp",
     description: "Quick order & enquiry",
     action: "https://wa.me/919560858066?text=Hello%20I%20want%20to%20place%20a%20wholesale%20order",
-    buttonText: "Chat on WhatsApp",
+    buttonText: "WhatsApp",
     color: "bg-green-500 hover:bg-green-600",
     external: true
   },
@@ -28,7 +28,7 @@ const contactMethods = [
     icon: FiMail,
     title: "Email Us",
     description: "Send product & quantity details",
-    action: "mailto:orders@khushienterprise.com?subject=Wholesale%20Order%20Inquiry",
+    action: "mailto:khushienterprises1013@gmail.com?subject=Wholesale%20Order%20Inquiry",
     buttonText: "Send Email",
     color: "bg-slate-700 hover:bg-slate-800"
   },

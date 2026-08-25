@@ -8,7 +8,7 @@ const products = [
     material: "Stainless Steel",
     description:
       "Rust-free stainless steel bowl with anti-skid rubber base. Suitable for dry food, wet food, treats, and water.",
-    image: "/images/products/pics.jpg"
+    image: "/images/products/Plain Dog Bowl.webp"
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const products = [
     variants: ["200ml", "400ml", "600ml", "750ml", "900ml", "1500ml", "2200ml"],
     material: "Stainless Steel",
     description: "Funky printed bowls with skid-free rubber base.",
-    image: "/images/products/pics.jpg"
+    image: "/images/products/Black Printed Bowl.webp"
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const products = [
     variants: ['18"', '24"', '30"', '36"', '42"'],
     material: "Powder-coated Iron",
     description: "Foldable iron cage, easy to lift, strong and durable.",
-    image: "/images/products/pics.jpg"
+    image: "/images/products/Cage with removable Tray.webp"
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ const products = [
     variants: ['Base Pipe 49"', 'Full Pipe 36"', 'Full Pipe 49"'],
     material: "Iron + Plastic Tray",
     description: "Heavy-duty pipe cage with removable plastic base tray.",
-    image: "/images/products/pics.jpg"
+    image: "/images/products/Dog Cage.webp"
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ const products = [
     variants: ["Fresh Mat", "Lightweight Mat"],
     material: "Eco-friendly Plastic",
     description: "Interlocking mat, odorless, safe & non-toxic.",
-    image: "/images/products/pics.jpg"
+    image: "/images/products/Dog Bed 2.webp"
   },
   {
     id: 6,
@@ -53,7 +53,7 @@ const products = [
     variants: ["6 Bowls", "12 Bowls"],
     material: "Wrought Iron",
     description: "Adjustable height stand with removable steel bowls.",
-    image: "/images/products/pics.jpg"
+    image: "/images/products/H- stand.webp"
   },
   {
     id: 7,
@@ -71,7 +71,7 @@ const products = [
     variants: ["Small", "Medium", "Large", "Extra Large"],
     material: "Iron Frame",
     description: "Stable H-frame feeding stand with removable bowls.",
-    image: "/images/products/pics.jpg"
+    image: "/images/products/H-stand 2.webp"
   },
   {
     id: 9,
@@ -89,7 +89,7 @@ const products = [
     variants: ["Small", "Large"],
     material: "Non-stick Plastic",
     description: "Lightweight, foldable scooper with ergonomic handle.",
-    image: "/images/products/pics.jpg"
+    image: "/images/products/Purple Poop Scooper.webp"
   },
   {
     id: 11,
@@ -98,7 +98,7 @@ const products = [
     variants: ["Standard"],
     material: "Plastic",
     description: "Lightweight litter tray with odor control design.",
-    image: "/images/products/pics.jpg"
+    image: "/images/products/cate.webp"
   },
   {
     id: 12,
@@ -107,7 +107,7 @@ const products = [
     variants: ["Size 1 – 7"],
     material: "Plastic",
     description: "Adjustable, breathable muzzle for dog safety.",
-    image: "/images/products/pics.jpg"
+    image: "/images/products/Black Muzzle.webp"
   },
   {
     id: 13,
@@ -125,7 +125,7 @@ const products = [
     variants: ["Small", "Large"],
     material: "Rubber",
     description: "Wall-mounted brush for easy coat cleaning.",
-    image: "/images/products/pics.jpg"
+    image: "/images/products/Scrubber 4.webp"
   },
   {
     id: 15,
@@ -143,7 +143,7 @@ const products = [
     variants: ["Small", "Medium", "Large"],
     material: "Metal Frame + Fabric",
     description: "Raised dog bed, easy to clean, breathable fabric.",
-    image: "/images/products/pics.jpg"
+    image: "/images/products/Bed for Dog.webp"
   }
 ];
 

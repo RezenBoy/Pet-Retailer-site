@@ -73,7 +73,7 @@ npm run build
 8. **Search & Filter** - category filtering and text search on products page
 9. **Related products** - shows similar products on detail page
 10. **Breadcrumb navigation** - on product detail pages
-11. **Consistent email** - standardized to orders@khushienterprise.com
+11. **Consistent email** - standardized to khushienterprises1013@gmail.com
 12. **Performance** - lazy loading images, code splitting
 13. **Better error handling** - invalid product IDs, missing data
 14. **Scroll to top** - smooth scroll on route change

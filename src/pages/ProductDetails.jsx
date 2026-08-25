@@ -167,7 +167,7 @@ function ProductDetails() {
 
                   <div className="grid grid-cols-2 gap-3">
                     <a
-                      href={`https://wa.me/919811368649?text=${whatsappMessage}`}
+                      href={`https://wa.me/919560858066?text=${whatsappMessage}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 bg-green-500 text-white px-4 py-3.5 rounded-xl font-semibold hover:bg-green-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
@@ -176,7 +176,7 @@ function ProductDetails() {
                       <span>WhatsApp</span>
                     </a>
                     <a
-                      href={`mailto:orders@khushienterprise.com?subject=${emailSubject}&body=${emailBody}`}
+                      href={`mailto:khushienterprises1013@gmail.com?subject=${emailSubject}&body=${emailBody}`}
                       className="flex items-center justify-center gap-2 bg-white border-2 border-slate-200 text-slate-700 px-4 py-3.5 rounded-xl font-semibold hover:border-slate-300 hover:bg-slate-50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
                     >
                       <FiMail className="w-5 h-5" aria-hidden="true" />

@@ -50,7 +50,7 @@ function Home() {
               href="tel:+919560858066"
               className="inline-flex items-center justify-center gap-2 bg-sky-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-sky-600 transition-all duration-200 shadow-lg shadow-sky-500/25 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
             >
-              Call Now: +91 95608 58066
+              Call Now
             </a>
             <Link
               to="/contact"

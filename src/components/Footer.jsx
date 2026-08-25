@@ -102,10 +102,10 @@ function Footer() {
               <li className="flex items-start gap-3">
                 <FiMail className="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
                 <a
-                  href="mailto:orders@khushienterprise.com"
+                  href="mailto:khushienterprises1013@gmail.com"
                   className="text-sm text-slate-300 hover:text-sky-400 transition-colors break-all focus:outline-none focus:text-sky-400"
                 >
-                  orders@khushienterprise.com
+                  khushienterprises1013@gmail.com
                 </a>
               </li>
             </ul>
