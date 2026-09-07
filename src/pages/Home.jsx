@@ -1,68 +1,11 @@
-
-import { Link } from "react-router-dom";
-import Hero from "../components/Hero";
-import ProductList from "../components/ProductList";
-import { FiArrowRight } from "react-icons/fi";
-
-function Home() {
-  return (
-    <main>
-      <Hero />
-
-      <section className="bg-slate-50 py-12 sm:py-16 lg:py-20" aria-labelledby="featured-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 sm:mb-10">
-            <div>
-              <h2 
-                id="featured-heading"
-                className="text-3xl sm:text-4xl font-bold text-slate-900"
-              >
-                Featured Products
-              </h2>
-              <p className="mt-2 text-base text-slate-600 max-w-2xl">
-                A curated selection of our best-selling wholesale pet products for retailers.
-              </p>
-            </div>
-            <Link
-              to="/products"
-              className="inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 font-semibold text-sm group focus:outline-none focus:underline"
-            >
-              View All Products
-              <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </Link>
-          </div>
-
-          <ProductList initialCount={4} loadMoreCount={4} />
-        </div>
-      </section>
-
-      <section className="bg-white py-12 sm:py-16 border-t border-slate-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
-            Ready to Stock Your Store?
-          </h2>
-          <p className="text-slate-600 mb-8 max-w-xl mx-auto">
-            Contact us today for wholesale pricing, bulk orders, and custom inquiries.
-            We serve retailers across India with reliable delivery.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:+919560858066"
-              className="inline-flex items-center justify-center gap-2 bg-sky-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-sky-600 transition-all duration-200 shadow-lg shadow-sky-500/25 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
-            >
-              Call Now
-            </a>
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-white border-2 border-slate-200 text-slate-700 px-8 py-4 rounded-xl font-semibold hover:border-sky-400 hover:text-sky-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
-            >
-              More Contact Options
-            </Link>
-          </div>
-        </div>
-      </section>
-    </main>
-  );
-}
-
+import {Link} from 'react-router-dom';
+import {FiArrowUpRight,FiCheckCircle,FiTruck,FiShield,FiUsers} from 'react-icons/fi';
+import Hero from '../components/Hero';
+import ProductList from '../components/ProductList';
+function Home(){return <main>
+ <Hero/>
+ <section className="bg-[#FFFDF8] border-y border-[#E7E0D2] py-14"><div className="section-shell grid grid-cols-2 lg:grid-cols-4 gap-8"><div><div className="display-font text-3xl text-[#304B82]">B2B</div><p className="text-xs uppercase tracking-[.18em] font-bold text-[#20252B]/45 mt-1">Wholesale only</p></div><div className="flex gap-3"><FiShield className="text-[#304B82] mt-1"/><div><p className="font-bold">Quality first</p><p className="text-sm text-[#20252B]/50 mt-1">Reliable, practical products</p></div></div><div className="flex gap-3"><FiTruck className="text-[#304B82] mt-1"/><div><p className="font-bold">Bulk ready</p><p className="text-sm text-[#20252B]/50 mt-1">Made for retail shelves</p></div></div><div className="flex gap-3"><FiUsers className="text-[#304B82] mt-1"/><div><p className="font-bold">Long-term partners</p><p className="text-sm text-[#20252B]/50 mt-1">Support beyond the order</p></div></div></div></section>
+ <section className="py-20 sm:py-24 bg-[#FBF7EC]"><div className="section-shell"><div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-10"><div><p className="eyebrow text-[#304B82]">The collection</p><h2 className="display-font text-4xl sm:text-5xl font-semibold mt-2">Made to move off the shelf.</h2><p className="mt-3 text-[#20252B]/55 max-w-xl">A focused assortment of pet essentials selected for everyday retail demand.</p></div><Link to="/products" className="font-bold text-sm text-[#304B82] inline-flex items-center gap-2">View all products <FiArrowUpRight/></Link></div><ProductList initialCount={4} loadMoreCount={4}/></div></section>
+ <section className="relative overflow-hidden bg-[#304B82] text-white py-20"><div className="absolute right-0 top-0 w-96 h-96 rounded-full bg-[#EFB851]/15 blur-3xl"/><div className="section-shell relative grid lg:grid-cols-[1fr_auto] gap-10 items-center"><div><p className="eyebrow text-[#EFB851]">Ready when you are</p><h2 className="display-font text-4xl sm:text-5xl font-semibold mt-3">Let’s stock your next order.</h2><p className="mt-4 max-w-2xl text-white/65 leading-7">Tell us what you need, the quantities and your preferred delivery timeline. Our team will take it from there.</p></div><div className="flex flex-col sm:flex-row gap-3"><a href="tel:+919560858066" className="rounded-full bg-[#EFB851] text-[#20252B] px-7 py-4 font-bold text-center hover:bg-[#f4c96f] transition">Call to order</a><Link to="/contact" className="rounded-full border border-white/20 px-7 py-4 font-bold text-center hover:bg-white/10 transition">Contact us</Link></div></div></section>
+ </main>}
 export default Home;

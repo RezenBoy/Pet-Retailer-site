@@ -1,23 +1,3 @@
-import ProductList from "../components/ProductList";
-
-function Products() {
-  return (
-    <main className="bg-slate-50 min-h-screen pt-28 sm:pt-32 pb-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 sm:mb-10">
-          <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">
-            Our Products
-          </h1>
-          <p className="text-base sm:text-lg text-slate-600 max-w-2xl">
-            Browse our complete catalog of wholesale pet products. 
-            All items available in bulk quantities for retailers.
-          </p>
-        </div>
-
-        <ProductList showFilters={true} initialCount={8} loadMoreCount={8} />
-      </div>
-    </main>
-  );
-}
-
+import ProductList from '../components/ProductList';
+function Products(){return <main className="pt-[106px] bg-[#FBF7EC] min-h-screen pb-20"><section className="section-shell pt-14 sm:pt-20"><p className="eyebrow text-[#304B82]">Wholesale catalogue</p><div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-5 mt-3 mb-12"><div><h1 className="display-font text-5xl sm:text-6xl font-semibold">Our collection</h1><p className="mt-4 text-[#20252B]/55 max-w-2xl leading-7">Pet essentials designed for retailers who want dependable products, clean assortments and healthy margins.</p></div><div className="pill bg-[#A8B89A]/25 text-[#304B82]">Retailer & distributor orders</div></div><ProductList showFilters initialCount={8} loadMoreCount={8}/></section></main>}
 export default Products;

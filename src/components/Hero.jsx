@@ -1,124 +1,25 @@
-import { BsWhatsapp } from "react-icons/bs";
-import { FiPhone, FiArrowRight, FiBookOpen, FiCheckCircle } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { BsWhatsapp } from 'react-icons/bs';
+import { FiPhone, FiArrowUpRight, FiPackage, FiCheckCircle } from 'react-icons/fi';
 
-const badges = [
-  "Trusted B2B Supplier",
-  "Wholesaler",
-  "Manufacturer"
-];
-
-const trustIndicators = [
-  {
-    text: "Verified Supplier",
-    icon: FiCheckCircle
-  },
-  {
-    text: "Fast Processing",
-    svg: (
-      <svg className="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    )
-  },
-  {
-    text: "Quality Guaranteed",
-    svg: (
-      <svg className="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    )
-  }
-];
-
-function Hero() {
-  return (
-    <section
-      className="relative min-h-[85vh] flex items-center overflow-hidden"
-      aria-label="Hero section"
-    >
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/hero.jpg')" }}
-        role="img"
-        aria-label="Pet products background"
-      />
-
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-900/85" />
-
-      <div className="absolute top-20 right-10 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
-
-      <div className="relative z-10 w-full pt-24 sm:pt-28">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-          <div className="max-w-2xl">
-
-            <div className="flex flex-wrap gap-3 mb-6">
-              {badges.map((badge, index) => (
-                <div
-                  key={index}
-                  className="inline-flex items-center gap-2 bg-sky-500/10 backdrop-blur-sm border border-sky-500/20 rounded-full px-4 py-2"
-                >
-                  <span className="w-2 h-2 bg-sky-400 rounded-full animate-pulse" aria-hidden="true" />
-                  <span className="text-sm font-medium text-sky-300">
-                    {badge}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1] text-white">
-              Wholesale Pet Products
-            </h1>
-
-            <p className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed max-w-xl">
-              We manufacture durable dog cages, stainless steel bowls, and
-              high-quality pet accessories, supplying wholesalers and retailers
-              with reliable products at competitive prices.
-            </p>
-
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <a
-                href="tel:+919560858066"
-                className="group inline-flex justify-center items-center gap-3 bg-sky-500 text-white px-6 sm:px-8 py-4 rounded-xl font-semibold hover:bg-sky-600 transition-all duration-200 shadow-lg shadow-sky-500/25 hover:shadow-xl hover:shadow-sky-500/30 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-slate-900"
-              >
-                <FiPhone className="w-5 h-5" aria-hidden="true" />
-                <span>Call to Order</span>
-                <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </a>
-
-              <a
-                href="https://wa.me/919560858066?text=Hello%20I%20want%20to%20place%20a%20wholesale%20order"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex justify-center items-center gap-3 bg-green-500/10 backdrop-blur-sm border border-green-500/20 px-6 sm:px-8 py-4 rounded-xl text-white font-semibold hover:bg-green-500/20 hover:border-green-500/40 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-slate-900"
-              >
-                <BsWhatsapp className="w-5 h-5 text-green-400" aria-hidden="true" />
-                <span>WhatsApp Order</span>
-              </a>
-
-              <Link
-                to="/products"
-                className="inline-flex justify-center items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 px-6 sm:px-8 py-4 rounded-xl text-white font-semibold hover:bg-white/10 hover:border-white/20 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/30 focus:ring-offset-2 focus:ring-offset-slate-900"
-              >
-                <FiBookOpen className="w-5 h-5" aria-hidden="true" />
-                <span>View Products</span>
-              </Link>
-            </div>
-
-            <div className="mt-12 flex flex-wrap items-center gap-6 sm:gap-8 text-sm text-slate-400">
-              {trustIndicators.map((item, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  {item.svg || <item.icon className="w-5 h-5 text-sky-400" aria-hidden="true" />}
-                  <span>{item.text}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+function Hero(){ return <section className="relative overflow-hidden bg-[#FBF7EC] pt-[106px]">
+  <div className="absolute -right-40 top-32 w-[520px] h-[520px] rounded-full bg-[#EFB851]/20 blur-3xl"/><div className="absolute -left-48 bottom-0 w-[520px] h-[520px] rounded-full bg-[#A8B89A]/20 blur-3xl"/>
+  <div className="section-shell relative grid lg:grid-cols-[1.02fr_.98fr] gap-10 lg:gap-16 items-center py-12 sm:py-16 lg:py-20 min-h-[680px]">
+    <div className="animate-fade-up">
+      <div className="inline-flex items-center gap-2 pill bg-[#E8EDF6] text-[#304B82] mb-7"><span className="w-2 h-2 rounded-full bg-[#EFB851]"/> Trusted B2B pet supply partner</div>
+      <h1 className="display-font text-[46px] sm:text-6xl lg:text-[72px] leading-[.98] font-semibold text-[#20252B] max-w-3xl">Products your<br/><span className="text-[#304B82] italic">customers love.</span></h1>
+      <p className="mt-7 text-base sm:text-lg leading-8 text-[#20252B]/65 max-w-xl">A refined range of durable pet essentials for retailers, wholesalers and distributors. Reliable quality, practical assortments and straightforward wholesale ordering.</p>
+      <div className="mt-9 flex flex-col sm:flex-row gap-3">
+        <Link to="/products" className="inline-flex justify-center items-center gap-2 rounded-full bg-[#304B82] text-white px-7 py-4 font-bold shadow-xl shadow-[#304B82]/20 hover:-translate-y-0.5 transition">Explore collection <FiArrowUpRight/></Link>
+        <a href="https://wa.me/919560858066?text=Hello%20I%20want%20to%20place%20a%20wholesale%20order" target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 rounded-full bg-[#FFFDF8] border border-[#DDD5C6] text-[#20252B] px-7 py-4 font-bold hover:border-[#A8B89A] transition"><BsWhatsapp className="text-[#304B82]"/> WhatsApp us</a>
       </div>
-    </section>
-  );
-}
-
+      <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-sm font-semibold text-[#20252B]/55"><span className="flex items-center gap-2"><FiCheckCircle className="text-[#304B82]"/> Retailer focused</span><span className="flex items-center gap-2"><FiPackage className="text-[#304B82]"/> Bulk ready</span><span className="flex items-center gap-2"><FiPhone className="text-[#304B82]"/> Human support</span></div>
+    </div>
+    <div className="relative animate-fade-up lg:pl-4" style={{animationDelay:'.12s'}}>
+      <div className="absolute -top-6 -left-5 sm:left-0 bg-[#EFB851] text-[#20252B] rounded-2xl px-4 py-3 shadow-xl z-10"><div className="text-[10px] uppercase tracking-[.18em] font-bold">Since</div><div className="display-font text-2xl font-semibold">2010</div></div>
+      <div className="rounded-[34px] overflow-hidden shadow-floating border-[10px] border-[#FFFDF8] rotate-[1.2deg]"><img src="/images/hero.jpg" alt="Pet products from Khushi Enterprises" className="w-full aspect-[4/4.3] object-cover"/></div>
+      <div className="absolute -bottom-5 -right-3 sm:right-0 bg-[#FFFDF8] rounded-2xl p-4 shadow-elegant border border-[#E7E0D2] flex items-center gap-3"><div className="w-10 h-10 rounded-full bg-[#A8B89A]/30 grid place-items-center text-[#304B82]"><FiCheckCircle/></div><div><div className="text-xs text-[#20252B]/50">Built for</div><div className="font-bold text-sm">Retailers & distributors</div></div></div>
+    </div>
+  </div>
+</section> }
 export default Hero;
