@@ -1,11 +1,110 @@
-import {useParams,Link,useNavigate} from 'react-router-dom';
-import {FiArrowLeft,FiPhone,FiMail,FiTag,FiAlertTriangle,FiArrowUpRight} from 'react-icons/fi';
-import {FaWhatsapp} from 'react-icons/fa';
+import { useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { FiArrowLeft, FiPhone, FiMail, FiTag, FiAlertTriangle, FiArrowUpRight } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 import products from '../data/products';
 import ImageWithFallback from '../components/ImageWithFallback';
-function ProductDetails(){const {id}=useParams();const navigate=useNavigate();const product=products.find(p=>p.id===Number(id));
- if(!product)return <main className="pt-[106px] min-h-screen bg-[#FBF7EC] grid place-items-center"><div className="text-center"><FiAlertTriangle size={40} className="mx-auto text-[#304B82]"/><h1 className="display-font text-4xl mt-4">Product not found</h1><Link to="/products" className="inline-flex mt-6 rounded-full bg-[#304B82] text-white px-6 py-3 font-bold">Back to collection</Link></div></main>;
- const wa=encodeURIComponent(`Hello, I'm interested in ${product.name}. Please share wholesale pricing, MOQ and availability.`); const mail=encodeURIComponent(`Hi,\n\nI'm interested in ${product.name} (${product.category}). Please share wholesale pricing, MOQ and delivery timeline.\n\nThank you.`);
- const related=products.filter(p=>p.category===product.category&&p.id!==product.id).slice(0,3);
- return <main className="pt-[106px] bg-[#FBF7EC] pb-20"><section className="section-shell pt-8"><Link to="/products" className="inline-flex items-center gap-2 text-sm font-bold text-[#304B82] mb-7"><FiArrowLeft/> Back to collection</Link><div className="grid lg:grid-cols-[1fr_.9fr] soft-card rounded-[32px] overflow-hidden"><div className="bg-[#F0ECE2] min-h-[420px] lg:min-h-[680px] flex items-center justify-center p-8 sm:p-12"><ImageWithFallback src={product.image} alt={product.name} className="max-h-[590px] w-full object-contain mix-blend-multiply" fallbackClassName="w-full h-full" type="product"/></div><div className="p-7 sm:p-10 lg:p-14 flex flex-col"><span className="pill bg-[#E8EDF6] text-[#304B82] self-start"><FiTag className="mr-2"/>{product.category}</span><h1 className="display-font text-4xl sm:text-5xl font-semibold leading-tight mt-5">{product.name}</h1><p className="mt-5 text-[#20252B]/60 leading-7">{product.description||'A dependable wholesale pet product selected for practical retail use and repeat demand.'}</p><div className="mt-8 divide-y divide-[#E7E0D2] border-y border-[#E7E0D2]">{[['Material',product.material||'Premium quality'],['Product ID',`#${String(product.id).padStart(3,'0')}`]].map(([a,b])=><div key={a} className="flex justify-between gap-4 py-4 text-sm"><span className="text-[#20252B]/45 font-semibold">{a}</span><span className="font-bold text-right">{b}</span></div>)}{product.variants?.length>0&&<div className="py-4"><p className="text-sm text-[#20252B]/45 font-semibold mb-3">Variants</p><div className="flex flex-wrap gap-2">{product.variants.map((v,i)=><span key={i} className="pill bg-[#FBF7EC] text-[#20252B]/65">{v}</span>)}</div></div>}</div><div className="mt-auto pt-8"><p className="eyebrow text-[#304B82]">Wholesale enquiry</p><div className="grid sm:grid-cols-2 gap-3 mt-4"><a href="tel:+919811368649" className="sm:col-span-2 inline-flex justify-center items-center gap-2 rounded-full bg-[#304B82] text-white py-4 font-bold">Call to order <FiPhone/></a><a href={`https://wa.me/919560858066?text=${wa}`} target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 rounded-full bg-[#A8B89A] text-[#20252B] py-3.5 font-bold">WhatsApp <FaWhatsapp/></a><a href={`mailto:khushienterprises1013@gmail.com?subject=Wholesale%20Inquiry%3A%20${encodeURIComponent(product.name)}&body=${mail}`} className="inline-flex justify-center items-center gap-2 rounded-full border border-[#DDD5C6] py-3.5 font-bold">Email <FiMail/></a></div><p className="mt-4 text-xs text-[#20252B]/45">B2B only · Minimum order quantities may apply.</p></div></div></div></section>{related.length>0&&<section className="section-shell mt-16"><div className="flex justify-between items-end mb-6"><div><p className="eyebrow text-[#304B82]">You may also like</p><h2 className="display-font text-3xl font-semibold mt-1">More in {product.category}</h2></div><Link to="/products" className="text-sm font-bold text-[#304B82] inline-flex items-center gap-2">All products <FiArrowUpRight/></Link></div><div className="grid sm:grid-cols-3 gap-5">{related.map(p=><Link key={p.id} to={`/products/${p.id}`} className="soft-card rounded-[22px] overflow-hidden flex items-center gap-4 p-3 hover:-translate-y-1 transition"><div className="w-20 h-20 rounded-2xl bg-[#F0ECE2] overflow-hidden shrink-0"><ImageWithFallback src={p.image} alt={p.name} className="w-full h-full object-cover" fallbackClassName="w-full h-full" type="product"/></div><div className="min-w-0"><h3 className="font-bold line-clamp-2">{p.name}</h3><p className="text-xs text-[#20252B]/45 mt-1">View product</p></div></Link>)}</div></section>}</main>}
+
+function ProductDetails() {
+  const { id } = useParams();
+  const product = products.find((item) => item.id === Number(id));
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  if (!product) {
+    return (
+      <main className="pt-[106px] min-h-screen bg-[#FBF7EC] grid place-items-center">
+        <div className="text-center">
+          <FiAlertTriangle size={40} className="mx-auto text-[#304B82]" />
+          <h1 className="display-font text-4xl mt-4">Product not found</h1>
+          <Link to="/products" className="inline-flex mt-6 rounded-full bg-[#304B82] text-white px-6 py-3 font-bold">Back to collection</Link>
+        </div>
+      </main>
+    );
+  }
+
+  const images = [product.image, ...(product.catalogueImages || [])];
+  const activeImage = images.includes(selectedImage) ? selectedImage : product.image;
+  const wa = encodeURIComponent(`Hello, I'm interested in ${product.name}. Please share wholesale pricing, MOQ and availability.`);
+  const mail = encodeURIComponent(`Hi,\n\nI'm interested in ${product.name} (${product.category}). Please share wholesale pricing, MOQ and delivery timeline.\n\nThank you.`);
+  const related = products.filter((item) => item.category === product.category && item.id !== product.id).slice(0, 3);
+
+  return (
+    <main className="pt-[106px] bg-[#FBF7EC] pb-20">
+      <section className="section-shell pt-8">
+        <Link to="/products" className="inline-flex items-center gap-2 text-sm font-bold text-[#304B82] mb-7"><FiArrowLeft /> Back to collection</Link>
+        <div className="grid lg:grid-cols-[1fr_.9fr] soft-card rounded-[32px] overflow-hidden">
+          <div>
+            <div className="bg-[#F0ECE2] min-h-[420px] lg:min-h-[680px] flex items-center justify-center p-8 sm:p-12">
+              <ImageWithFallback src={activeImage} alt={product.name} className="max-h-[590px] w-full object-contain mix-blend-multiply" fallbackClassName="w-full h-full" type="product" />
+            </div>
+            {product.catalogueImages?.length > 0 && (
+              <div className="flex gap-3 overflow-x-auto bg-[#FBF7EC] p-4 sm:p-5" aria-label="Product catalogue images">
+                {images.map((image, index) => (
+                  <button
+                    key={image}
+                    type="button"
+                    onClick={() => setSelectedImage(image)}
+                    aria-label={index === 0 ? 'Show product photo' : `Show catalogue image ${index}`}
+                    aria-pressed={activeImage === image}
+                    className={`h-20 w-20 sm:h-24 sm:w-24 shrink-0 overflow-hidden rounded-xl border-2 bg-white transition ${activeImage === image ? 'border-[#304B82]' : 'border-transparent hover:border-[#A8B89A]'}`}
+                  >
+                    <img src={image} alt="" className="h-full w-full object-cover" loading="lazy" />
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+          <div className="p-7 sm:p-10 lg:p-14 flex flex-col">
+            <span className="pill bg-[#E8EDF6] text-[#304B82] self-start"><FiTag className="mr-2" />{product.category}</span>
+            <h1 className="display-font text-4xl sm:text-5xl font-semibold leading-tight mt-5">{product.name}</h1>
+            <p className="mt-5 text-[#20252B]/60 leading-7">{product.description || 'A dependable wholesale pet product selected for practical retail use and repeat demand.'}</p>
+            <div className="mt-8 divide-y divide-[#E7E0D2] border-y border-[#E7E0D2]">
+              {[
+                ['Material', product.material || 'Premium quality'],
+                ['Product ID', `#${String(product.id).padStart(3, '0')}`]
+              ].map(([label, value]) => (
+                <div key={label} className="flex justify-between gap-4 py-4 text-sm">
+                  <span className="text-[#20252B]/45 font-semibold">{label}</span>
+                  <span className="font-bold text-right">{value}</span>
+                </div>
+              ))}
+              {product.variants?.length > 0 && (
+                <div className="py-4">
+                  <p className="text-sm text-[#20252B]/45 font-semibold mb-3">Variants</p>
+                  <div className="flex flex-wrap gap-2">{product.variants.map((variant, index) => <span key={index} className="pill bg-[#FBF7EC] text-[#20252B]/65">{variant}</span>)}</div>
+                </div>
+              )}
+            </div>
+            <div className="mt-auto pt-8">
+              <p className="eyebrow text-[#304B82]">Wholesale enquiry</p>
+              <div className="grid sm:grid-cols-2 gap-3 mt-4">
+                <a href="tel:+919811368649" className="sm:col-span-2 inline-flex justify-center items-center gap-2 rounded-full bg-[#304B82] text-white py-4 font-bold">Call to order <FiPhone /></a>
+                <a href={`https://wa.me/919560858066?text=${wa}`} target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 rounded-full bg-[#A8B89A] text-[#20252B] py-3.5 font-bold">WhatsApp <FaWhatsapp /></a>
+                <a href={`mailto:khushienterprises1013@gmail.com?subject=Wholesale%20Inquiry%3A%20${encodeURIComponent(product.name)}&body=${mail}`} className="inline-flex justify-center items-center gap-2 rounded-full border border-[#DDD5C6] py-3.5 font-bold">Email <FiMail /></a>
+              </div>
+              <p className="mt-4 text-xs text-[#20252B]/45">B2B only · Minimum order quantities may apply.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      {related.length > 0 && (
+        <section className="section-shell mt-16">
+          <div className="flex justify-between items-end mb-6">
+            <div><p className="eyebrow text-[#304B82]">You may also like</p><h2 className="display-font text-3xl font-semibold mt-1">More in {product.category}</h2></div>
+            <Link to="/products" className="text-sm font-bold text-[#304B82] inline-flex items-center gap-2">All products <FiArrowUpRight /></Link>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-5">
+            {related.map((item) => (
+              <Link key={item.id} to={`/products/${item.id}`} className="soft-card rounded-[22px] overflow-hidden flex items-center gap-4 p-3 hover:-translate-y-1 transition">
+                <div className="w-20 h-20 rounded-2xl bg-[#F0ECE2] overflow-hidden shrink-0"><ImageWithFallback src={item.image} alt={item.name} className="w-full h-full object-cover" fallbackClassName="w-full h-full" type="product" /></div>
+                <div className="min-w-0"><h3 className="font-bold line-clamp-2">{item.name}</h3><p className="text-xs text-[#20252B]/45 mt-1">View product</p></div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+    </main>
+  );
+}
+
 export default ProductDetails;

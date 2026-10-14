@@ -8,7 +8,13 @@ const products = [
     material: "Stainless Steel",
     description:
       "Rust-free stainless steel bowl with anti-skid rubber base. Suitable for dry food, wet food, treats, and water.",
-    image: "/images/products/Plain Dog Bowl.webp"
+    image: "/images/products/Plain Dog Bowl.webp",
+    catalogueImages: [
+      "/images/catalogue/steel-dog-bowl/plain-400ml-01.png",
+      "/images/catalogue/steel-dog-bowl/plain-400ml-02.png",
+      "/images/catalogue/steel-dog-bowl/plain-400ml-03.png",
+      "/images/catalogue/steel-dog-bowl/plain-400ml-04.png"
+    ]
   },
   {
     id: 2,
@@ -17,7 +23,13 @@ const products = [
     variants: ["200ml", "400ml", "600ml", "750ml", "900ml", "1500ml", "2200ml"],
     material: "Stainless Steel",
     description: "Funky printed bowls with skid-free rubber base.",
-    image: "/images/products/Black Printed Bowl.webp"
+    image: "/images/products/Black Printed Bowl.webp",
+    catalogueImages: [
+      "/images/catalogue/printed-dog-bowl/black-1000ml-01.png",
+      "/images/catalogue/printed-dog-bowl/black-1000ml-02.png",
+      "/images/catalogue/printed-dog-bowl/black-1000ml-03.png",
+      "/images/catalogue/printed-dog-bowl/black-1000ml-04.png"
+    ]
   },
   {
     id: 3,
@@ -71,7 +83,13 @@ const products = [
     variants: ["Small", "Medium", "Large", "Extra Large"],
     material: "Iron Frame",
     description: "Stable H-frame feeding stand with removable bowls.",
-    image: "/images/products/H-stand 2.webp"
+    image: "/images/products/H-stand 2.webp",
+    catalogueImages: [
+      "/images/catalogue/dog-h-stand/h-stand-800ml-01.png",
+      "/images/catalogue/dog-h-stand/h-stand-800ml-02.png",
+      "/images/catalogue/dog-h-stand/h-stand-800ml-03.png",
+      "/images/catalogue/dog-h-stand/h-stand-800ml-04.png"
+    ]
   },
   {
     id: 9,
